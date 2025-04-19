@@ -4,6 +4,7 @@ import os
 import google.generativeai as genai
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api._errors import RequestBlocked
+from youtube_transcript_api.proxies import GenericProxyConfig
 
 load_dotenv() # loads all env variables from .env file
 
@@ -22,12 +23,16 @@ The transcript text is as follows:"""
 ##Extracting the transcript from the youtube video.
 def extract_transcript_details(youtube_video_url):
     try:
+        youtube_extracter = YouTubeTranscriptApi(proxy_config=GenericProxyConfig(
+            http_url="http://40.76.69.94:8080", 
+            https_url="https://40.76.69.94:8080"
+            )
+        )
+            
         video_id = youtube_video_url.split("=")[1]
-        proxies = {
-            "http": "http://40.76.69.94:8080",
-            "https": "http://40.76.69.94:8080"
-        }
-        transcript_text = YouTubeTranscriptApi.get_transcript(video_id, proxies=proxies)
+        print(video_id)
+
+        transcript_text = youtube_extracter.fetch(video_id)
 
         transcript = ""
         for i in transcript_text:
