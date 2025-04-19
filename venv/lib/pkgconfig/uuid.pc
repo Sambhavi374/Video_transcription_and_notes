@@ -1,0 +1,11 @@
+prefix=/workspaces/Video_transcription_and_notes/venv
+exec_prefix=/workspaces/Video_transcription_and_notes/venv
+libdir=/workspaces/Video_transcription_and_notes/venv/lib
+includedir=/workspaces/Video_transcription_and_notes/venv/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.32.1
+Requires:
+Cflags: -I${includedir}/uuid
+Libs: -L${libdir} -luuid

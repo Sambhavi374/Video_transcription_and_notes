@@ -1,0 +1,13 @@
+prefix=/workspaces/Video_transcription_and_notes/venv
+exec_prefix=/workspaces/Video_transcription_and_notes/venv
+libdir=/workspaces/Video_transcription_and_notes/venv/lib
+sharedlibdir=/workspaces/Video_transcription_and_notes/venv/lib
+includedir=/workspaces/Video_transcription_and_notes/venv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

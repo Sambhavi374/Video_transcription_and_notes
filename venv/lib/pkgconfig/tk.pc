@@ -1,0 +1,15 @@
+# tk pkg-config source file
+
+prefix=/workspaces/Video_transcription_and_notes/venv
+exec_prefix=/workspaces/Video_transcription_and_notes/venv
+libdir=/workspaces/Video_transcription_and_notes/venv/lib
+includedir=${prefix}/include
+
+Name: The Tk Toolkit
+Description: Tk is a cross-platform graphical user interface toolkit, the standard GUI not only for Tcl, but for many other dynamic languages as well.
+URL: https://www.tcl-lang.org/
+Version: 8.6.14
+Requires: tcl >= 8.6
+Libs: -L${libdir} -ltk8.6 -ltkstub8.6
+Libs.private:  -lX11
+Cflags: -I${includedir}
